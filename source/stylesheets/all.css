@@ -1,7 +1,167 @@
 @charset "utf-8";
 
+@font-face {
+  font-family: 'Eskell-Lrg';
+  src: url('fonts/EksellDisplayWeb-Large.eot');
+  src: url('fonts/EksellDisplayWeb-Large.woff2') format('woff2'),
+       url('fonts/EksellDisplayWeb-Large.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
-  background: #d4d4d4 url("../images/background.png");
-  text-align: center;
-  font-family: sans-serif;
+  text-align: left;
+  font-size: 100%;
+  font-family: 'Eskell-Lrg', serif;
+  background-color: #FFFFFF;
+  animation-name: homeCycle; 
+  animation-duration:60s; 
+  animation-direction:alternate; 
+  animation-iteration-count:infinite;
+  animation-delay: 3s;
+
+  -webkit-animation-name: homeCycle; 
+  -webkit-animation-duration:60s; 
+  -webkit-animation-direction:alternate; 
+  -webkit-animation-iteration-count:infinite;
+  -webkit-animation-delay: 3s;
+}
+
+*::selection {
+  background-color: #9BFAD4;
+}
+
+$red: #F26A6D;
+
+h1 {
+  font-size: 3em;
+  font-family: 'Eskell-Lrg', serif;
+}
+
+.bug {
+  width: 12em;
+  top: 2em;
+  left: 2em;
+  position: fixed;
+  -webkit-animation: spin_one 100s linear infinite;
+  -moz-animation: spin_one 100s linear infinite;
+  -ms-animation: spin_one 100s linear infinite;
+  -o-animation: spin_one 100s linear infinite;
+  animation: spin_one 100s linear infinite;
+}
+
+.area-1 a {
+  font-weight: normal;
+  appearance: none;
+  text-decoration: none;
+  color: #F26A6D; 
+}
+
+.area-1 a:h1 {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 1em;
+  left: 50%;
+  position: inherit;
+  background: white;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+  z-index: -1010;
+}
+
+.area-1 a:hover:after { 
+  width: 100%;
+  left: 0;
+}
+
+.area-2 {
+  // background-color: #454545;
+  padding: 1.5em;
+  min-height: 50vh;
+  max-height: 50vh;
+}
+
+.area-1 {
+  line-height: 1;
+  padding: 1.5em;
+  max-height: 50vh;
+  font-size: 3em;
+  font-family: 'Eskell-Lrg', serif;
+}
+
+.container {
+  padding: .5em;
+  margin-left: 25%;
+  margin-right: 25%;
+  top: 50%;
+  transform: translateY(50%);
+}
+
+img {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hours {
+  /*position: absolute;*/
+  z-index: 101;
+  -webkit-animation: spin 300s linear infinite;
+  -moz-animation: spin 300s linear infinite;
+  -ms-animation: spin 300s linear infinite;
+  -o-animation: spin 300s linear infinite;
+  animation: spin 300s linear infinite;
+}
+
+.mins {
+  /*position: absolute;*/
+  z-index: 202;
+  -webkit-animation: spin_one 100s linear infinite;
+  -moz-animation: spin_one 100s linear infinite;
+  -ms-animation: spin_one 100s linear infinite;
+  -o-animation: spin_one 100s linear infinite;
+  animation: spin_one 100s linear infinite;
+}
+
+.secs {
+  /*position: absolute;*/
+  z-index: 303;
+  -webkit-animation: spin_two 60s linear infinite;
+  -moz-animation: spin_two 60s linear infinite;
+  -ms-animation: spin_two 60s linear infinite;
+  -o-animation: spin_two 60s linear infinite;
+  animation: spin_two 60s linear infinite;
+}
+
+@keyframes spin {
+ from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+
+@keyframes spin_one {
+ from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+
+@keyframes spin_two {
+ from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+
+@keyframes homeCycle {
+  0% {background-color:#FFFFFF;} 
+  25% {background-color:#D0D0D0;} 
+  50% {background-color:#B0B0B0;} 
+  75% {background-color:#E0E0E0;} 
+  100% {background-color:#CFCFCF;}
+} 
+
+@-webkit-keyframes homeCycle { 
+  0% {background-color:#FFFFFF;} 
+  25% {background-color:#D0D0D0;} 
+  50% {background-color:#B0B0B0;} 
+  75% {background-color:#E0E0E0;} 
+  100% {background-color:#CFCFCF;}
 }
